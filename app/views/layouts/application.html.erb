@@ -1,0 +1,55 @@
+ <!DOCTYPE html>
+  <head>
+    <title>Animali!</title>
+    <%= csrf_meta_tags %>
+   
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://kit.fontawesome.com/13c8637a3c.js" crossorigin="anonymous"></script>
+  </head>
+
+  <header class="navbar clearfix navbar-fixed-top navbar-inverse">
+    <div class="container">
+      <nav>
+        <ul class="nav">
+          <%= link_to image_tag('/assets/logo.jpg', width:"90px", height:"90px"), root_path %>
+        </ul>
+      </nav>
+      <nav>
+        <ul class="nav justify-content-end">
+            <!-- ユーザーログイン時 -->
+          <% if user_signed_in? %>
+
+            <li><%= link_to ' マイページ', user_path(current_user.id), class: 'btn btn-outline-info fas fa-address-book' %></li>
+            <li><%= link_to ' ブログ一覧',  blogs_path, class: 'btn btn-outline-info' %></li>
+            <li><%= link_to ' ログアウト',  destroy_user_session_path, method: :delete, class: 'btn btn-outline-info ' %></li>
+          
+          <% else %>
+            <li><%= link_to ' ブログ一覧', blogs_path, class: 'btn btn-outline-info ' %></li>
+            <li><%= link_to ' 新規登録',  new_user_registration_path, class: 'btn btn-outline-info' %></li>
+            <li><%= link_to ' ログイン', new_user_session_path, class: 'btn btn-outline-info ' %></li>
+          <% end %>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <body>
+    <div class="container">
+      <div class="row">
+        <%= yield %>
+      </div>
+    </div>
+  </body>
+
+
+  <footer>
+      
+    </ul>
+    <ul class="footer-menu">
+      
+    <p>© All rights reserved by Shunsuke Kodama.</p>
+  </footer>
+
+</html>

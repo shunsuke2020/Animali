@@ -1,0 +1,49 @@
+<div class="profile-container">
+    <h3 class="profile-name"><%= @user.name %></h3>
+    <%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg', class: "img-circle pull-left profile-img", fallback: "no_image.jpg" %>
+    <% if @user.id == current_user.id %>
+      <p><%= link_to "プロフィール編集", edit_user_path(@user), class: "pull-right" %></p>
+    <% end %>
+</div>
+<section class="sct-color-1 slice">
+  <div class="container-fluid masonry-container">
+    <div class="row">
+      <div class="col-md-8 col-sm-offset-2">
+        <div class="masonry-wrapper-cols">
+          <div class="masonry-gutter"></div>
+          <% @blogs.each do |blog| %>
+            <div class="masonry-block">
+              <div class="block block-image v1">
+                <div class="block-image">
+                  <div class="view view-first">
+                    <%= link_to blog_path(blog.id) do %>
+                      <%= attachment_image_tag blog, :image %>
+                    <% end %>
+                  </div>
+                </div>
+                <div class="block-content">
+                  <%= attachment_image_tag blog.user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg", class: "img-circle pull-left profile-thumb" %>
+                  <h3 class="block-title">
+                    <%= link_to blog_path(blog.id) do %>
+                      <i class="fa fa-map-marker"></i><%= blog.title %>
+                    <% end %>
+                  </h3>
+                  <p><%= blog.sentence %></p>
+                  <ul class="inline-meta">
+                    <li>By
+                      <%= blog.user.name %>
+                    </li>
+                    <li>
+                    <a href="#">23 コメント</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          <% end %>
+          <%= paginate @blogs %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

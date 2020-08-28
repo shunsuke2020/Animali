@@ -1,0 +1,44 @@
+<h4>index</h4>
+
+<section class="sct-color-1 slice">
+  <div class="container-fluid masonry-container">
+    <div class="row">
+      <div class="col-md-8 col-sm-offset-2">
+        <div class="masonry-wrapper-cols">
+          <div class="masonry-gutter"></div>
+          <% @blogs.each do |blog| %>
+            <div class="masonry-block">
+              <div class="block block-image v1">
+                <div class="block-image">
+                  <div class="view view-first">
+                    <%= attachment_image_tag blog, :blog %>
+                  </div>
+                </div>
+                <div class="block-content">
+                  <%= image_tag('sample-author1.jpg', class: "img-circle pull-left profile-thumb") %>
+                  <h3 class="block-title">
+                    <%= link_to blog_path(blog.id) do %>
+                      <i class="fa fa-map-marker"></i><%= blog.title %>
+                    <% end %>
+                    <%= paginate @blogs %>
+                  </h3>
+                  <p><%= blog.sentence %></p>
+                  <ul class="inline-meta">
+                    <li>By
+                      <%= blog.user.name %>
+                    </li>
+                    <li>
+                      <%= link_to "{blog.blog_comments.count} コメント", blog_path(blog.id) %>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<%= link_to "show",  blog_path(@blogs) %>
+<%= link_to "new",  new_blog_path(@blogs) %>
