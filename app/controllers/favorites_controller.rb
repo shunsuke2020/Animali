@@ -6,6 +6,7 @@ class FavoritesController < ApplicationController
     favorite.save
     redirect_to blog_path(blog)
   end
+  
 
   def destroy
     blog = Blog.find(params[:blog_id])

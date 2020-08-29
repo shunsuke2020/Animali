@@ -13,3 +13,138 @@
  *= require_tree .
  *= require_self
  */
+@import "bootstrap";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  }
+
+clearfix::after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+.h1 .h2 .h3 .h4 .h5 .h6 .p .li .td .th {
+	font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+}
+
+h2 {
+  color: #6699FF;
+  text-align: center;
+  padding: 0.25em;
+  border-top: solid 2px #FFBBFF;
+  border-bottom: solid 2px #FFBBFF;
+  background: -webkit-repeating-linear-gradient(-45deg, #FFDDFF, #FFDDFF 3px,#FFEEFF 3px, #FFEEFF 7px);
+  background: repeating-linear-gradient(-45deg, #FFDDFF, #FFDDFF 3px,#FFEEFF 3px, #FFEEFF 7px);
+  margin-bottom: 30px;
+}
+
+
+
+header {
+	height: 100px;
+}
+
+li {
+	margin-right: 10px;
+}
+
+
+.navbar-inverse {
+	padding-top: 0px;
+	background: linear-gradient(to left,#FFEEFF, #FFEEFF);
+	border-bottom: solid 11px #CCFF99;
+}
+
+.navbar-nav {
+	 margin: 20px 20px;
+}
+
+#nav-message {
+	margin-right: 50px;
+	line-height: 30px;
+	color: #777777;
+	background-color: #fff;
+	border-radius: 20px;
+}
+
+body {
+	background-color: #FFFFee;
+	flex: 1;
+}
+
+.main-visual {
+	width: 700px;
+	height: 280px;
+	margin-bottom: 30px;
+	background-image: url(bg.jpg);
+	background-size: cover;
+	background-position: center;
+	padding: 62px 150px;
+	border-radius: 10px;
+}
+
+.main-visual-text {
+	width: 400px;
+	font-size: 16px;
+	text-align: center;
+	line-height: 250%;
+	background-color: rgba(255,255,255,0.7);
+	border-radius: 10px;
+}
+
+body > .container {
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+.go-login {
+	margin-top: 30px;
+	text-align: center;
+	border: double 5px #CCCCCC;
+	border-radius: 10px;
+}
+
+.item-box {
+	width: 160px;
+	margin-top: 20px;
+	margin-right: 20px;
+	float: left;
+}
+
+.image-box{
+	border: solid 5px #CCFFFF;
+}
+
+.my-page-table {
+	background-color: #fff;
+	border: double 5px #FFEEFF;
+	text-align: center;
+	margin: 20px;
+}
+
+
+footer{
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(to right, #FFCCFF, #FFCCFF);
+	border-top: solid 10px #CCFF99;
+    color: black;
+    text-align: center;
+    bottom: 0;
+}
+
+ul.footer-menu li {
+	display: inline;
+}
+
+ul.footer-menu li i {
+	font-size: 30px;
+	color: #777777;
+	margin-top: 10px;
+	margin-right: 10px
+}
+
