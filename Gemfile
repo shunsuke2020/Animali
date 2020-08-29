@@ -59,3 +59,8 @@ gem "refile-mini_magick"
 gem 'bootstrap', '~> 4.3.1'
 gem 'pry-byebug'  
 gem 'ransack'
+
+gem 'dotenv-rails'
+group :production do
+  gem 'mysql2'
+end
