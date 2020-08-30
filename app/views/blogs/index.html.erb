@@ -1,6 +1,6 @@
 <div class="col-md-8 offset-md-1">
   <%= flash[:notice] %>
-   <h2>　一覧　</h2>
+   <h2>　ブログ一覧　</h2>
     <div class="main clearfix">
       <% @blogs.each do |blog| %>
       <div class="blog-box">
@@ -15,5 +15,5 @@
 </div>
     
 
-<%= link_to "new",  new_blog_path(@blogs) %>
+<%= link_to "ブログを投稿する",  new_blog_path(@blogs) %>
  <%= paginate @blogs, class: "paginate" %>

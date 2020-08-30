@@ -5,7 +5,7 @@
         <div class="post-item">
           <div class="post-meta-top">
             <div class="blog">
-              <%= attachment_image_tag @blog, :image %>
+              <%= attachment_image_tag @blog, :image, :fill, 300, 250, fallback: "no_image.jpg", size:'300x250' %>
             </div>
           </div>
           <div class="post-content">

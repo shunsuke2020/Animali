@@ -1,4 +1,6 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
+
+<html>
   <head>
     <title>Animali!</title>
     <%= csrf_meta_tags %>
@@ -21,14 +23,14 @@
             <!-- ユーザーログイン時 -->
           <% if user_signed_in? %>
 
-            <li><%= link_to ' マイページ', user_path(current_user.id), class: 'btn btn-outline-info fas fa-address-book' %></li>
-            <li><%= link_to ' ブログ一覧',  blogs_path, class: 'btn btn-outline-info' %></li>
-            <li><%= link_to ' ログアウト',  destroy_user_session_path, method: :delete, class: 'btn btn-outline-info ' %></li>
+            <li><%= link_to ' マイページ', user_path(current_user.id), class: 'btn btn-outline-Light fas fa-address-book' %></li>
+            <li><%= link_to ' ブログ一覧',  blogs_path, class: 'btn btn-outline-Light fas fa-paw ' %></li>
+            <li><%= link_to ' ログアウト',  destroy_user_session_path, method: :delete, class: 'btn btn-outline-Light fas fa-sign-out-alt' %></li>
           
           <% else %>
-            <li><%= link_to ' ブログ一覧', blogs_path, class: 'btn btn-outline-info ' %></li>
-            <li><%= link_to ' 新規登録',  new_user_registration_path, class: 'btn btn-outline-info' %></li>
-            <li><%= link_to ' ログイン', new_user_session_path, class: 'btn btn-outline-info ' %></li>
+            <li><%= link_to ' ブログ一覧', blogs_path, class: 'btn btn-outline-Light  fas fa-paw ' %></li>
+            <li><%= link_to ' 新規登録',  new_user_registration_path, class: 'btn btn-outline-Light fas fa-registered' %></li>
+            <li><%= link_to ' ログイン', new_user_session_path, class: 'btn btn-outline-Light fas fa-sign-in-alt' %></li>
           <% end %>
         </ul>
       </nav>
