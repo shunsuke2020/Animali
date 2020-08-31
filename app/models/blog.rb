@@ -4,6 +4,7 @@ class Blog < ApplicationRecord
      attachment :image
      has_many :blog_comments, dependent: :destroy
      has_many :favorites, dependent: :destroy
+     belongs_to :ganre
      
      validates :title, presence: true
      validates :image, presence: true

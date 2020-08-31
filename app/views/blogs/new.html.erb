@@ -7,10 +7,20 @@
           <div class="col-md-6 col-md-offset-3 post_image_form">
             <div class="section-title-wrapper style-1 v1">
               <h3 class="section-title section-title-sm left">
-                <span>画像投稿フォーム</span>
+                <span>ブログ投稿フォーム</span>
               </h3>
             </div>
 
+            
+            <%= form_with(model: @blog, local: true) do |form| %>
+              <%= form.radio_button :ganre, :dog %>
+              <i class="fas fa-dog"></i><%= form.label :ganre, "ワンちゃん", {value: :dog, style: "display: inline-block;"} %><br>
+              <%= form.radio_button :ganre, :cat %>
+              <i class="fas fa-cat"></i><%= form.label :ganre, "ネコちゃん", {value: :cat, style: "display: inline-block;"} %><br>
+              <%= form.radio_button :ganre, :other %>
+              <i class="fas fa-otter"></i><%= form.label :ganre, "その他のペット", {value: :other, style: "display: inline-block;"} %>
+            <% end %>
+                        
             <%= form_for(@blog, url: blogs_path) do |f| %>
               <% if @blog.errors.any? %>
                 <div id="error_explanation">

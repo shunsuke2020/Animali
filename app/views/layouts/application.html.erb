@@ -22,7 +22,7 @@
         <ul class="nav justify-content-end">
             <!-- ユーザーログイン時 -->
           <% if user_signed_in? %>
-
+            <li><%= link_to ' about', homes_about_path, class: 'btn btn-outline-Light fas fa-info-circle' %></li>
             <li><%= link_to ' マイページ', user_path(current_user.id), class: 'btn btn-outline-Light fas fa-address-book' %></li>
             <li><%= link_to ' ブログ一覧',  blogs_path, class: 'btn btn-outline-Light fas fa-paw ' %></li>
             <li><%= link_to ' ログアウト',  destroy_user_session_path, method: :delete, class: 'btn btn-outline-Light fas fa-sign-out-alt' %></li>
